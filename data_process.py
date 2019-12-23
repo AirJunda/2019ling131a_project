@@ -67,7 +67,6 @@ def convert_tag(word):
     return tag_dict.get(tag, wordnet.NOUN)
 
 
-# Optimazation via feature eng
 def data_filter(docs):
     """This method filter the text by removing the stop words and lemmatizes it, and generate a unigram tokens set"""
     filter_stop_words = remove_stop_words(docs)
