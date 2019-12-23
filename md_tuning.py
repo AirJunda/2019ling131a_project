@@ -23,8 +23,6 @@ from sklearn.metrics import confusion_matrix
 """ Load the dataset and split it into labels and SMS documents """
 df = pd.read_csv('spam.csv', encoding = "ISO-8859-1")
 df = df.drop(df.columns[[2, 3, 4]], axis = 1) 
-df.isna().sum()
-
 targets = list(df['v1'])
 docs = list(df['v2'])
 
@@ -43,7 +41,6 @@ def docFilter(docs):
     return filtered_docs
 
 filtered_docs  = docFilter(docs)
-
 
 #%%  
 """ apply lemmatizaton on the filtered documents  """
@@ -76,21 +73,16 @@ def doc2Vector(docs,cv):
     docvec = cv.fit_transform(docs)
     return docvec
 
-
-
 lemmatized = [lemmatize(tokens) for tokens in filtered_docs]
-
 
 #%%
 """ Transformed each doucment into tf-idf arrays"""
 cv = CountVectorizer(min_df=2, tokenizer=dummy, preprocessor=dummy, max_features=5000)
-lemaed_docs  = doc2Vector(lemmatized,cv)  # lemmatized vectors
-
 cv_transformer = TfidfTransformer()
 
+lemaed_docs  = doc2Vector(lemmatized,cv)  # lemmatized vectors
 docs_tfidf =  cv_transformer.fit_transform(lemaed_docs)
-docs_tfidf = docs_tfidf.toarray()
-
+docs_tfidf = docs_tfidf.toarray()  # tf-idf vectors of all sms documents
 
 
 #%% 
@@ -140,10 +132,7 @@ def fp_rate(cfmatrix):
     fp = cfmatrix[0,1]/( cfmatrix[0,0] + cfmatrix[0,1])
     return fp
 
-
-
 # calcuation of false positive rate of best NB model
-    
 def avg_fp(alp = 1):
     ''' Calculation of average false positve rate from confusion matrix for 10 repeated experiments'''
     fps = []
