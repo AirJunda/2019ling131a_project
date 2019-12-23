@@ -2,11 +2,7 @@
 
 This is the repository for the final project of course LING131A for 2019Fall.
 
-Group member: 
-
-Junda Li
-
-Tongkai Zhang(tongkaizhang@brandeis.edu)
+Group member: Junda Li && Tongkai Zhang(tongkaizhang@brandeis.edu)
 
 This project is about applying Naive bayes method in classification of Spam SMS messages.
 
