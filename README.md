@@ -1,7 +1,7 @@
 # Spam SMS Message Classification: A Naïve Bayes Approach
 
 This is the repository for the final project of course LING131A for 2019Fall.
-Group member: Junda Li and Tongkai Zhang
+Group member: Junda Li and Tongkai Zhang(tongkaizhang@brandeis.edu)
 
 This project is about applying Naive bayes method in classification of Spam SMS messages.
 
@@ -12,6 +12,7 @@ Dependencies:
 4. pickle
 
 Instruction:
+
 data_process.py: This module implements the data reading and processing method such as tokenizer and remove stop words.
 And also self-implemented bigram and positive mutual information bigram method for more choices of feature extraction.
 
