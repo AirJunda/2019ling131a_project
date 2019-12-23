@@ -26,8 +26,11 @@ naive_bayes.py: This module uses methods in data_process to process the dataset 
 2. Tf-idf bigram model: using filtered bigram data
 3. Tf-idf bigram pmi model: based on 2, only keep the bigrams with positive mutual information as feature set
 How to run this: in the terminal 
+
   'python3 naive_bayes.py --train' : train these three models
+  
   'python3 naive_bayes.py --run This is a sample message' : predict the result
+  
 Note that according to our experiment on the feature set optimization, the unigram model has highest accuracy, so here we use unigram classifier to predict
   
 
